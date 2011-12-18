@@ -1,8 +1,8 @@
 {
-    "name": "tn_datasets_api_kanso",
+    "name": "tn_datasets_api",
     "version": "0.0.1",
     "description": "The Tunisian OpenData initiative",
-    "attachments": [],
+    "attachments": ["index.html"],
     "modules": ["lib"],
     "load": "lib/app",
     "dependencies": {
