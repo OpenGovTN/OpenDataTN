@@ -103,7 +103,7 @@ module.exports = {
                doc.delegation.code, 
                doc.circonscription.code
                ], 
-               doc
+               1
              );
        }
      }

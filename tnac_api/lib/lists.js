@@ -32,9 +32,9 @@ module.exports = {
     'bureau_json' : function (head,req) {
       fn_setcharset();
       var row = getRow(); 
-      delete row.value._id; 
-      delete row.value._rev; 
-      send (toJSON(row.value));
+      delete row.doc._id; 
+      delete row.doc._rev; 
+      send (toJSON(row.doc));
     },
     'centre_json' : function (head,req) {
       fn_tojson_format(3,4, 'bureaux', 'bureau');
@@ -76,6 +76,24 @@ module.exports = {
         var liste = {}; 
         liste.name = value; 
         rtn.listes.push(liste);
+      } 
+      send (toJSON(rtn));
+    },
+    'all_bureau_json' : function (head,req) {
+      fn_setcharset();
+      var rtn = {};
+      var value;
+      while(row = getRow()) { 
+        log(row);
+        log(row.key);
+        log(row.key[3]);
+        value = row.key;
+        // we need some type checking and initi to avoid hitting undefined objects 
+        rtn[value[3]] = typeof(rtn[value[3]]) != 'undefined' ? rtn[value[3]] : {};
+        rtn[value[3]][value[2]] = typeof(rtn[value[3]][value[2]]) != 'undefined' ? rtn[value[3]][value[2]] : {};
+//        rtn[value[3]][value[2]][value[1]] = typeof(rtn[value[3]][value[2]][value[1]]) != 'undefined' ? rtn[value[3]][value[2]][value[1]] : {};
+
+        rtn[value[3]][value[2]][value[1]] = value[0]; 
       } 
       send (toJSON(rtn));
     }

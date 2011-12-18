@@ -6,7 +6,9 @@ var version = "v1";
 module.exports = [
     {from: version + '/bureau/:circonscription/:delegation/:centre_vote/:bureau_vote', 
      to: '_list/bureau_json/bureau_vote',
-     query: { 'key' : [
+     query: { 
+       'include_docs' : 'true',
+       'key' : [
          ":bureau_vote",
          ":centre_vote",
          ":delegation",
