@@ -28,7 +28,7 @@ How to setup your own development endpoint
 
 * Upload the sample metadataset into the database
 
-	kanso upload http://localhost:5984/tn_datasets data/tnac.json
+	kanso upload data/tnac.json http://localhost:5984/tn_datasets
 
 * Time to hit this URL : [http://localhost:5984/tn_datasets/_design/tn_datasets_api/_rewrite/](http://localhost:5984/tn_datasets/_design/tn_datasets_api/_rewrite/)
 

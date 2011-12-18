@@ -1,0 +1,2 @@
+{"_id":"tnac","api":{"version":"v1","endpoints":["circonscription","delegation","centre","bureau"]},"name":"Tunisian Constituant Assembly Elections","description":"Election Tunisienne de l'Assemblee Constituante","date":"2011/10/23","vhost":"tnac","db_name":"tnac_2011"}
+
