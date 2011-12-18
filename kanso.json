@@ -1,0 +1,13 @@
+{
+    "name": "tn_datasets_api_kanso",
+    "version": "0.0.1",
+    "description": "The Tunisian OpenData initiative",
+    "attachments": [],
+    "modules": ["lib"],
+    "load": "lib/app",
+    "dependencies": {
+        "attachments": null,
+        "properties": null,
+        "modules": null       
+    }
+}
