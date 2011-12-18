@@ -103,7 +103,7 @@ API Development
 ---------------
 We use [Kanso](http://kan.so/) as an easy tool to manage the CouchDB databases associated with the various API endpoints.
 
-Each of the API metadata or data endpoints is going to consist of Kanso (couch)app and reside in a separate directory.
+Each of the API metadata or data endpoints is going to consist of a Kanso (couch)app and reside in a separate directory.
 
 Kanso is pretty straightforward and allows for collaboration around couch design documents. It allows simplifies reuse in views/show/list functions which helps maintainability
 

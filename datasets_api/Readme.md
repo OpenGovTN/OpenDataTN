@@ -14,21 +14,21 @@ How to setup your own development endpoint
 
 * Grab a copy of this repo
 
-    git clone git@github.com:dadicool/OpenDataTN.git
+	git clone git@github.com:dadicool/OpenDataTN.git
 
 * Go into datasets_api and run :
 
-    kanso install
+	kanso install
 
 * Make sure that your couchdb is running by accessing the [Futon](http://localhost:5984/_utils) admin tool
 
 * Push the tn_datasets app to the Database by running :
 
-    kanso push http://localhost:5984/tn_datasets
+	kanso push http://localhost:5984/tn_datasets
 
 * Upload the sample metadataset into the database
 
-    kanso upload http://localhost:5984/tn_datasets data/tnac.json
+	kanso upload http://localhost:5984/tn_datasets data/tnac.json
 
 * Time to hit this URL : [http://localhost:5984/tn_datasets/_design/tn_datasets_api/_rewrite/](http://localhost:5984/tn_datasets/_design/tn_datasets_api/_rewrite/)
 
