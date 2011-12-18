@@ -10,9 +10,9 @@ var fn_setcharset = function() {
       }); 
 };
 
-var fn_tojson_format = function(index1, index2, array_name, element_name, code, name) {
-      code = typeof(code) != 'undefined' ? code : 'code';
-      name = typeof(name) != 'undefined' ? name : 'name';
+var fn_tojson_format = function(index1, index2, array_name, element_name, name1, name2) {
+      name1 = typeof(name1) != 'undefined' ? name1 : 'code';
+      name2 = typeof(name2) != 'undefined' ? name2 : 'name';
       fn_setcharset();
       var rtn = {}; 
       rtn[array_name] = []; 
@@ -20,10 +20,11 @@ var fn_tojson_format = function(index1, index2, array_name, element_name, code, 
         log(row.key);
         var value = row.key; 
         rtn[element_name] = {}; 
-        rtn[element_name][code] = value[index1]; 
-        rtn[element_name][name] = value[index2]; 
+        rtn[element_name][name1] = value[index1]; 
+        rtn[element_name][name2] = value[index2]; 
         rtn[array_name].push(rtn[element_name]);
       } 
+      delete rtn[element_name];
       send (toJSON(rtn));
 };
 
