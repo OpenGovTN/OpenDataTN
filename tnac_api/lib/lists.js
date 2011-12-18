@@ -22,7 +22,7 @@ var fn_tojson_format = function(index1, index2, array_name, element_name, code, 
         rtn[element_name] = {}; 
         rtn[element_name][code] = value[index1]; 
         rtn[element_name][name] = value[index2]; 
-        rtn[array_name].push(key)
+        rtn[array_name].push(rtn[element_name]);
       } 
       send (toJSON(rtn));
 };
