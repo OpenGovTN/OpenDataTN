@@ -7,6 +7,7 @@ var expectedCircData = expectedData.circonscriptions;
 var expectedDelegData = expectedData.delegations;
 var circ_test_id = expectedData.circ_test_id; 
 
+var fn_utils = require('./lib/tnac_test_utils.js');
 
 var suite = APIeasy.describe('tnac_circonscription');
 
@@ -16,49 +17,25 @@ suite.use(config.host, config.port)
     .get('/circonscription')
     .expect(200)
     .expect('should respond with at least one circonscription', function (err, res, body) {
-        var result = JSON.parse(body);
-        var circonscriptions = result['circonscriptions'];
-
-        assert.isArray(circonscriptions);
-        assert.isTrue(circonscriptions.length >= 1);
+        fn_utils.checkAtLeastOneEntry(err, res, body, 'circonscriptions');
     })
     .expect('should have a code and a name fields for each circonscription', function (err, res, body) {
-        var result = JSON.parse(body);
-        var circonscriptions = result['circonscriptions'];
-
-        assert.isArray(circonscriptions);
-        for (var i=0; i< circonscriptions.length; i++){
-            assert.isDefined(circonscriptions[i].code);
-            assert.isDefined(circonscriptions[i].name);
-        }
+        fn_utils.checkAllEntriesCodeName(err, res, body, 'circonscriptions');
     })
     .expect('should provide the expected response', function (err, res, body) {
-        var result = JSON.parse(body);
-        assert.deepEqual(expectedCircData, result);
+        assert.deepEqual(expectedCircData, JSON.parse(body));
     })
     .undiscuss()
     .discuss('When asking for a specific circonscription')
     .get('/circonscription/' + circ_test_id)
     .expect(200)
     .expect('should respond with at least delegation', function (err, res, body) {
-        var result = JSON.parse(body);
-        var delegations = result['delegations'];
-
-        assert.isArray(delegations);
-        assert.isTrue(delegations.length >= 1);
+        fn_utils.checkAtLeastOneEntry(err, res, body, 'delegations');
     })
     .expect('should have a code and a name fields for each delegation', function (err, res, body) {
-        var result = JSON.parse(body);
-        var delegations = result['delegations'];
-
-        assert.isArray(delegations);
-        for (var i=0; i< delegations.length; i++){
-            assert.isDefined(delegations[i].code);
-            assert.isDefined(delegations[i].name);
-        }
+        fn_utils.checkAllEntriesCodeName(err, res, body, 'delegations');
     })
     .expect('should provide the expected response', function (err, res, body) {
-        var result = JSON.parse(body);
-        assert.deepEqual(expectedDelegData, result);
+        assert.deepEqual(expectedDelegData, JSON.parse(body));
     })
     .export(module);
