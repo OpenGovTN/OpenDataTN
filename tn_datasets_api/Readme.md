@@ -36,4 +36,6 @@ How to setup your own development endpoint
 
 How to make changes to the endpoint
 -----------------------------------
-* Make a change to the the lib/app.js file and push it to the databse with kanso. 
+* Make a change to the the lib/*.js files and push it to the databse with kanso.
+* Run the test suite (See instructions here [Tests HowTo](test/README.md)
+* Commit!
