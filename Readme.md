@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/dadicool/OpenDataTN.png)](http://travis-ci.org/#!/dadicool/OpenDataTN)
+[![Build Status](https://secure.travis-ci.org/dadicool/OpenDataTN.png)](http://travis-ci.org/dadicool/OpenDataTN)
 
 
 Introduction
