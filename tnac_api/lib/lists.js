@@ -84,14 +84,10 @@ module.exports = {
       var rtn = {};
       var value;
       while(row = getRow()) { 
-        log(row);
-        log(row.key);
-        log(row.key[3]);
         value = row.key;
         // we need some type checking and initi to avoid hitting undefined objects 
         rtn[value[3]] = typeof(rtn[value[3]]) != 'undefined' ? rtn[value[3]] : {};
         rtn[value[3]][value[2]] = typeof(rtn[value[3]][value[2]]) != 'undefined' ? rtn[value[3]][value[2]] : {};
-//        rtn[value[3]][value[2]][value[1]] = typeof(rtn[value[3]][value[2]][value[1]]) != 'undefined' ? rtn[value[3]][value[2]][value[1]] : {};
 
         rtn[value[3]][value[2]][value[1]] = value[0]; 
       } 
