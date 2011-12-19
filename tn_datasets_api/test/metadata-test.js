@@ -5,7 +5,7 @@ var config = require('./config.js');
 var metadata = require('./fixtures/metadata.js')
 
 
-var suite = APIeasy.describe('opendatatn');
+var suite = APIeasy.describe('tn_datasets_api');
 
 suite.use(config.host, config.port)
     .discuss('get api')
