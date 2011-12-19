@@ -5,7 +5,6 @@ Prequisties:
 * [npm] (http://npmjs.org/): now it comes with node installer (at least for mac)
 * [vows] (http://vowsjs.org/)
 
-
 Install:
 -------
 
@@ -13,16 +12,18 @@ run the install command on the current folder:
     
     $ npm install
 
+add ./node_modules/.bin to your PATH
+
 Run:
 ---
 
 run individual tests, for example:
 
-    $ vows circonscription-test.js
+    $ vows metadata-test.js
 
 or run all the tests:
 
-    $ np test
+    $ npm test
 
 this is equivalent to:
 
