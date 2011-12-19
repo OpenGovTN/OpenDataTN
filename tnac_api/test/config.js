@@ -8,5 +8,5 @@ var configLocal = {};
 configLocal.host = "asma3radio.local";
 configLocal.port = 5984;
 
-module.exports = configLocal;
-//module.exports = configProd;
+//module.exports = configLocal;
+module.exports = configProd;
