@@ -1,6 +1,12 @@
-var config = {};
+var configProd = {};
 
-config.host = "api.opendatatn.org";
-config.port = 80;
+configProd.host = "api.opendatatn.org";
+configProd.port = 80;
 
-module.exports = config;
+var configLocal = {};
+
+configLocal.host = "asma3radio.local";
+configLocal.port = 5984;
+
+module.exports = configLocal;
+//module.exports = configProd;
