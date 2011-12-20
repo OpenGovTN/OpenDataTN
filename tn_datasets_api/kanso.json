@@ -1,0 +1,25 @@
+{
+    "name": "tn_datasets_api",
+    "version": "0.0.1",
+    "description": "The Tunisian OpenData initiative",
+    "load": "lib/app",
+    "modules": "lib",
+    "attachments": "static",
+    "handlebars": {
+        "templates": "templates"
+    },
+    "duality": {
+        "base_template": "base.html"
+    },
+    "dependencies": {
+        "modules": null,
+        "properties": null,
+        "attachments": null,
+        "settings": null,
+        "duality": null,
+        "handlebars": null,
+        "handlebars-helpers": null,
+        "duality-handlebars": null,
+        "couchtypes": null
+    }
+}
