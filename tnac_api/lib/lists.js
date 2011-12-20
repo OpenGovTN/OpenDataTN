@@ -17,7 +17,6 @@ var fn_tojson_format = function(index1, index2, array_name, element_name, name1,
       var rtn = {}; 
       rtn[array_name] = []; 
       while(row = getRow()) { 
-        log(row.key);
         var value = row.key; 
         rtn[element_name] = {}; 
         rtn[element_name][name1] = value[index1]; 
@@ -33,7 +32,13 @@ module.exports = {
       fn_setcharset();
       var row = getRow(); 
       delete row.doc._id; 
-      delete row.doc._rev; 
+      delete row.doc._rev;
+      var listes = row.doc.resultat.listes;
+      var sorted_listes = listes.sort(function (a,b) {
+                                        return b.vote - a.vote;
+                                      }
+                                    );
+      row.doc.resultat.listes = sorted_listes;
       send (toJSON(row.doc));
     },
     'centre_json' : function (head,req) {

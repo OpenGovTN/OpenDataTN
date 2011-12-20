@@ -38,6 +38,18 @@ suite.use(config.host, config.port)
         assert.isArray(result.resultat.listes);
         assert.isTrue(result.resultat.listes.length >= 1);
     })
+    .expect('should return the votes for the list in descending order', function (err, res, body) {
+        var result = JSON.parse(body);
+        assert.isDefined(result.resultat);
+        assert.isArray(result.resultat.listes);
+        assert.isTrue(result.resultat.listes.length >= 1);
+        var listes = result.resultat.listes;
+        var sorted_listes = listes.sort(function (a,b) {
+                                            return b.vote - a.vote;
+                                          }
+                                       );
+        assert.deepEqual(sorted_listes, listes);
+    })
     .expect('should provide the expected response', function (err, res, body) {
         assert.deepEqual(expectedResult, JSON.parse(body));
     })
