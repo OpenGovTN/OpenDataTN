@@ -1,6 +1,6 @@
 Introduction
 ------------
-This is the API endpoint that serves the list of datasets which are available through api.opendatatn.org
+This is the API endpoint that serves the Tunisian Contitutional Assembly Election Results at api.opendatatn.org
 
 How to setup your own development endpoint
 ------------------------------------------
@@ -16,7 +16,7 @@ How to setup your own development endpoint
 
 	git clone git@github.com:dadicool/OpenDataTN.git
 
-* Go into datasets_api and run :
+* Go into tnac_api and run :
 
 	kanso install
 
@@ -24,16 +24,18 @@ How to setup your own development endpoint
 
 * Push the tn_datasets app to the Database by running :
 
-	kanso push http://localhost:5984/tn_datasets
+	kanso push http://localhost:5984/tnac
 
 * Upload the sample metadataset into the database
 
-	kanso upload data/tnac.json http://localhost:5984/tn_datasets
+	kanso upload data/tnac.json http://localhost:5984/tnac
 
-* Time to hit this URL : [http://localhost:5984/tn_datasets/_design/tn_datasets_api/_rewrite/](http://localhost:5984/tn_datasets/_design/tn_datasets_api/_rewrite/)
+* Time to hit this URL : [http://localhost:5984/tnac/_design/tnac_api/_rewrite/](http://localhost:5984/tnac/_design/tn_api/_rewrite/)
 
 * That's the root of your own endpoint!
 
 How to make changes to the endpoint
 -----------------------------------
+* Fork the repo or create your own branch
 * Make a change to the the lib/app.js file and push it to the databse with kanso. 
+* Submit a pull request!

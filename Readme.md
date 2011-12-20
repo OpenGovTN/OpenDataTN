@@ -1,3 +1,6 @@
+[![Build Status](https://secure.travis-ci.org/dadicool/OpenDataTN.png)](http://travis-ci.org/dadicool/OpenDataTN)
+
+
 Introduction
 ------------
 This API makes available various public data sets under the OpenGovTN initiative.
@@ -108,3 +111,10 @@ Each of the API metadata or data endpoints is going to consist of a Kanso (couch
 Kanso is pretty straightforward and allows for collaboration around couch design documents. It allows simplifies reuse in views/show/list functions which helps maintainability
 
 For detailed instructions of how to setup your own dev environment for one of the API endpoints, please go into the corresponding directory.
+
+Testing
+-------
+In order to run the full test suite:
+
+    $ npm install
+    $ npm test
